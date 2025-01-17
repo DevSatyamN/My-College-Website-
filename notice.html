@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <style>
+      .button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 25px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  background: #6c18ff;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+    </style>
+</head>
+  <body>
+    <center><h3><font color="white" face="tahoma" style="background-color:brown;">&emsp;&emsp;&emsp;&emsp;&emsp; NOTICE BOARD&emsp;&emsp;&emsp;&emsp;&emsp;</font></h3></center>
+<table style="font-family: Arial, Helvetica, sans-serif;" border cellspacing="0" cellpadding="3" bordercolor="silver">
+  <tr style="color :whitesmoke;" bgcolor="orang">
+    <th>Sl.No.</th>
+    <th>Notice No.</th>
+    <th>Notices</th>
+    <th>Type</th>
+    <th>Publish</th>
+    <th>Download</th>
+  </tr>
+  <tr style="text-align: center ;" bgcolor="wheat">
+    <td>01</td>
+    <td>1955</td>
+    <td>Parents Teacher Meeting</td>
+    <td>pdf</td>
+    <td>22.11.2022</td>
+    <td><a href="Parents Teacher Meeting Notice.pdf" download=""><div data-tooltip="Size: 200 Kb" class="button">
+      <div class="button-wrapper">
+        <div class="text">Download</div>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" height="2em" width="2em" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"></path></svg>
+          </span>
+        </div>
+      </div></a></td>
+  </tr>
+  <tr style="text-align: center ;">
+    <td>02</td>
+    <td>1892</td>
+    <td>3rd & 5th Semester Internal Exam</td>
+    <td>pdf</td>
+    <td>18.11.2022</td>
+    <td><a href="3rd & 5th Sem IA Notice.pdf" download><div data-tooltip="Size: 236 Kb" class="button">
+      <div class="button-wrapper">
+        <div class="text">Download</div>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" height="2em" width="2em" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"></path></svg>
+          </span>
+        </div>
+      </div></a></td>
+  </tr>
+  <tr style="text-align: center ;" bgcolor="wheat">
+    <td>03</td>
+    <td>1809</td>
+    <td>Result Of 4th Semester CSE Branch</td>
+    <td>pdf</td>
+    <td>28.10.2022</td>
+    <td> <a href="Summer-2022  4th Sem Results.pdf" download><div data-tooltip="Size: 768 Kb" class="button">
+      <div class="button-wrapper">
+        <div class="text">Download</div>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" height="2em" width="2em" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"></path></svg>
+          </span>
+        </div>
+      </div></a> </td>
+  </tr>
+  <tr style="text-align: center ;">
+    <td>04</td>
+    <td>1789</td>
+    <td>2nd & 4th Semester Summer Exam Result </td>
+    <td>pdf</td>
+    <td>27.10.2022</td>
+    <td><a href="Result-27.10.2022.pdf" download><div data-tooltip="Size: 379 Kb" class="button">
+      <div class="button-wrapper">
+        <div class="text">Download</div>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" height="2em" width="2em" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"></path></svg>
+          </span>
+        </div>
+      </div></a></td>
+  </tr>
+  <tr style="text-align: center ;" bgcolor="wheat">
+    <td>05</td>
+    <td>1690</td>
+    <td>Notice On Correction of Student Data</td>
+    <td>pdf</td>
+    <td>15.10.2022</td>
+    <td><a href="Notice-correction-of-Student-Data.pdf"><div data-tooltip="Size: 281 Kb" class="button">
+      <div class="button-wrapper">
+        <div class="text">Download</div>
+          <span class="icon">
+            <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" height="2em" width="2em" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" fill="none"></path></svg>
+          </span>
+        </div>
+      </div></a></td>
+  </tr>
+</table>
+
+  </body>
+</html>
